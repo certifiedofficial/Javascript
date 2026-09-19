@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+      margin: 0;
+    }
+
+    .timer-container {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    #timer-display {
+      font-size: 48px;
+      font-weight: bold;
+      color: #333;
+      margin: 20px 0;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    #start-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    #start-btn:hover {
+      background-color: #218838;
+    }
+
+    #reset-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    #reset-btn:hover {
+      background-color: #c82333;
+    }
+
+    input[type="number"] {
+      width: 80px;
+      padding: 8px;
+      font-size: 16px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="timer-container">
+    <h2>Countdown Timer</h2>
+   
+    <label for="seconds-input">Enter seconds: </label>
+    <input type="number" id="seconds-input" value="10" min="1">
+
+    <div id="timer-display">00:00</div>
+
+    <div class="buttons">
+      <button id="start-btn" onclick="startCountdown()">Start</button>
+      <button id="reset-btn" onclick="resetCountdown()">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    let timerInterval = null;
+    let totalSeconds = 0;
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      const formattedMins = String(mins).padStart(2, '0');
+      const formattedSecs = String(secs).padStart(2, '0');
+      return `${formattedMins}:${formattedSecs}`;
+    }
+
+    function startCountdown() {
+      if (timerInterval !== null) return;
+
+      const inputField = document.getElementById("seconds-input");
+     
+      if (totalSeconds <= 0) {
+        totalSeconds = parseInt(inputField.value, 10);
+      }
+
+      if (isNaN(totalSeconds) || totalSeconds <= 0) {
+        alert("Please enter a valid number of seconds.");
+        return;
+      }
+
+      const display = document.getElementById("timer-display");
+      display.innerText = formatTime(totalSeconds);
+
+      timerInterval = setInterval(() => {
+        totalSeconds--;
+        display.innerText = formatTime(totalSeconds);
+
+        if (totalSeconds <= 0) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          display.innerText = "Time's Up!";
+        }
+      }, 1000);
+    }
+
+    function resetCountdown() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+     
+      const inputField = document.getElementById("seconds-input");
+      totalSeconds = parseInt(inputField.value, 10) || 0;
+     
+      document.getElementById("timer-display").innerText = formatTime(totalSeconds);
+    }
+
+    document.getElementById("seconds-input").addEventListener("input", (e) => {
+      if (timerInterval === null) {
+        totalSeconds = parseInt(e.target.value, 10) || 0;
+        document.getElementById("timer-display").innerText = formatTime(totalSeconds);
+      }
+    });
+  </script>
+
+</body>
+</html>

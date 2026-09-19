@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOODIE</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">FOODIE</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Menu</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+
+<div class="cart-icon">
+<a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+<span id="cart-count">0</span>
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>Delicious meals, delivered.</h1>
+
+<p>Fresh meals from your favourite restaurants delivered fast.</p>
+
+<div class="hero-actions">
+
+<button>Order Now</button>
+
+<div class="search-box">
+
+<input id="search" placeholder="Search Meals">
+
+<button>
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<main>
+
+<div class="content">
+
+<section>
+
+<h2>Food Categories</h2>
+
+<div id="categories"></div>
+
+</section>
+
+<section>
+
+<h2>Popular Meals</h2>
+
+<div id="meal-grid" class="meal-grid"></div>
+
+</section>
+
+</div>
+
+<aside class="cart">
+
+<h3>Your Cart</h3>
+
+<div id="cart-items"></div>
+
+<div class="summary">
+
+<p>Subtotal <span id="subtotal">₦0</span></p>
+
+<p>Delivery <span>₦500</span></p>
+
+<hr>
+
+<h4>Total <span id="total">₦500</span></h4>
+
+</div>
+
+<button class="checkout">Checkout</button>
+
+</aside>
+
+</main>
+
+<footer>
+
+<div>
+<h3>FOODIE</h3>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+<p>Home</p>
+<p>Menu</p>
+<p>About</p>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>foodie@email.com</p>
+<p>+234 xxx xxx xxxx</p>
+</div>
+
+<div>
+<h4>Socials</h4>
+<i class="fab fa-facebook"></i>
+<i class="fab fa-x-twitter"></i>
+<i class="fab fa-instagram"></i>
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

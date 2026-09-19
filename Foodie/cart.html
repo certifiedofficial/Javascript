@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="cart-page">
+
+        <a href="index.html" class="back">
+            ← Back to Menu
+        </a>
+
+        <h1>Your Cart</h1>
+
+        <div id="cart-list"></div>
+
+        <div class="cart-summary">
+
+            <h2>
+                Total:
+                <span id="cart-total">₦0</span>
+            </h2>
+
+            <button id="checkout-btn" class="checkout">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const cartList = document.getElementById("cart-list");
+
+        const cartTotal = document.getElementById("cart-total");
+
+        const checkoutBtn = document.getElementById("checkout-btn");
+
+
+        let cart =
+            JSON.parse(localStorage.getItem("cart")) || [];
+
+
+        function displayCart() {
+
+            cartList.innerHTML = "";
+
+            let total = 0;
+
+
+            if (cart.length === 0) {
+
+                cartList.innerHTML = `
+                    <div class="empty-cart">
+
+                        <h2>Your cart is empty</h2>
+
+                        <p>Add some delicious meals first.</p>
+
+                        <a href="index.html">
+                            <button class="checkout">
+                                Browse Meals
+                            </button>
+                        </a>
+
+                    </div>
+                `;
+
+                cartTotal.textContent = "₦0";
+
+                checkoutBtn.style.display = "none";
+
+                return;
+
+            }
+
+
+            checkoutBtn.style.display = "block";
+
+
+            cart.forEach((item, index) => {
+
+                const price =
+                    item.promo_price || item.price;
+
+
+                const itemTotal =
+                    price * item.quantity;
+
+
+                total += itemTotal;
+
+
+                cartList.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <img
+                            src="${item.image}"
+                            alt="${item.name}"
+                        >
+
+                        <div>
+
+                            <h3>${item.name}</h3>
+
+                            <p>
+                                ₦${price}
+                            </p>
+
+                            <p>
+                                Quantity:
+                                ${item.quantity}
+                            </p>
+
+                            <p>
+                                Subtotal:
+                                ₦${itemTotal}
+                            </p>
+
+                            <button
+                                onclick="removeItem(${index})"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            });
+
+
+            cartTotal.textContent =
+                "₦" + total;
+
+        }
+
+
+        function removeItem(index) {
+
+            cart.splice(index, 1);
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            displayCart();
+
+        }
+
+
+        checkoutBtn.onclick = () => {
+
+            localStorage.setItem(
+                "checkout",
+                JSON.stringify(cart)
+            );
+
+            window.location.href =
+                "checkout.html";
+
+        };
+
+
+        displayCart();
+
+    </script>
+
+</body>
+
+</html>

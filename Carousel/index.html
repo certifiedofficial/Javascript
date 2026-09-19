@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Javascript Carousel</title>
+</head>
+<body>
+<div class="carousel">
+  <div class="slides">
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1789140673394-9b0b967577ed?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      <div class="content">
+        <h2>River Side</h2>
+        <p>Turn your ideas into real digital products.</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      <div class="content">
+        <h2>Modern Workspace</h2>
+        <p>A clean and beautiful workspace for creativity.</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      <div class="content">
+        <h2>Code. Create. Deploy</h2>
+        <p>Build modern applications with powerful technologies.</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1583321500900-82807e458f3c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      <div class="content">
+        <h2>Work Together</h2>
+        <p>Greate products are built by great teams.</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      <div class="content">
+        <h2>Strategies Your Business</h2>
+        <p>A business strategy is a clear action plan that helps a company reach its long-term goals and beat its competitors.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn prev" id="prev"><i class="fa-solid fa-less-than"></i></button>
+<button class="btn next" id="next"><i class="fa-solid fa-greater-than"></i></button>
+
+<div class="dots" id="dots"></div>
+
+<script>
+  const slides = document.querySelector(".slides")
+  const slideItems = document.querySelectorAll(".slide")
+  const nextButton = document.querySelector("#next")
+  const prevButton = document.querySelector("#prev")
+  const dotsContainer = document.querySelector("#dots")
+
+  let currentSlide = 0
+  let autoSlide;
+
+  const totalSlides = slideItems.length;
+
+  function createDots(){
+    slideItems.forEach((_,index) => {
+      const dot = document.createElement("button")
+      dot.classList.add("dot");
+
+      dot.addEventListener("click",() => {
+        currentSlide = index;
+        showSlide()
+        restartAutoSlide()
+      })
+      dotsContainer.appendChild(dot)
+    })
+  }
+  function showSlide(){
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`
+    const dots = document.querySelectorAll(".dot")
+    dots.forEach((dot, index)=>{
+      dot.classList.toggle("active",index === currentSlide)
+    })
+  }
+function nextSlide(){
+  currentSlide++
+  if(currentSlide >= totalSlides){
+    currentSlide = 0
+  }
+  showSlide()
+}
+function previousSlide(){
+  currentSlide--
+if(currentSlide < 0){
+  currentSlide = totalSlides -1
+}
+showSlide()
+}
+function startAutoSlide(){
+  autoSlide = setInterval(() =>{
+    nextSlide()
+  }, 3000)
+}
+function restartAutoSlide(){
+  clearInterval(autoSlide)
+  startAutoSlide()
+}
+nextButton.addEventListener("click",() =>{
+  nextSlide()
+  restartAutoSlide()
+})
+prevButton.addEventListener("click",()=>{
+  previousSlide()
+  restartAutoSlide()
+})
+createDots()
+showSlide()
+startAutoSlide()
+
+</script>
+</body>
+</html>

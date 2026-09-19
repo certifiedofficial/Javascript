@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  #product-container{
+    display: grid;
+    gap: 20px;  
+    padding: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.product-card{
+  padding:20px;
+  border: 1px solid none;
+  border-radius:12px;
+  background-color:white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.product-card h2{
+ margin-bottom: 10px;
+}
+.product-card p{
+  margin: 5px 0;
+}
+</style>
+<body>
+
+  <div id="product-container"></div>
+    <p id="pen"></p>
+    <button onclick="document.getElementById('pen').innerHTML=Date()">click me</button>
+    
+    <p id="key">today is monday</p>
+    <button onclick="document.getElementById('key').innerHTML='<h2>No! Today is Tuesday'">click now</button>
+
+    <script>
+      // let num1 = 40;
+      // let num2 = 20;
+      // let num3 = num1 + num2
+      // console.log("the addition of the number is " + num3) 
+              
+      // let fname = 'john';
+      // let lname = 'Doe';
+      // let hisAge = 20
+      // let info = fname + ' '+ lname + ' ' + hisAge
+      // document.write("My name is " + info)
+
+      // let typ1= 5
+      // let typ4= 6
+      // let typ2 = typ1 == typ4
+      // console.log(typ2)
+          
+      // let age = 19;
+      // if(age >=18){
+      //   document.write("You are eligible to vote")
+      // }else if(age == 17){
+      //   document.write("You still have a chance")
+      // }else{
+      //   document.write("You are not eligible to vote")
+      // } 
+
+      // let score =40;
+      // let grade;
+
+      // if(score >= 80){
+      //   grade="A"
+      // }else if(score >= 70){
+   
+      //   grade="B"
+      // }else if(score >= 60){
+      //   grade="C"
+      // }else if(score >= 50){
+      //   grade="D"
+      // }else(score >= 40 )
+      //   grade="undefined"
+      
+      // console.log("Your score is " + score)
+      // console.log("Your grade is " + grade)
+
+      // document.write("Your Score" + score )
+      // document.write("Your Score" + grade)
+
+//       let examScore = 78;
+// let assignmentScore = 78;
+// let attendance = 78;
+// let conduct = "poor";
+// let feePaid = true;
+
+
+// let finalScore =
+//   (examScore * 0.6) +
+//   (assignmentScore * 0.3) +
+//   (attendance * 0.1);
+
+// console.log("Final Score:", finalScore);
+
+
+// if (!feePaid) {
+//   console.log("Result Withheld");
+// }
+
+
+// else if (attendance < 75) {
+//   console.log("Grade: F");
+//   console.log("Status: Student Failed");
+// }
+
+// else {
+//   let grade;
+
+//   if (finalScore >= 80) {
+//     grade = "A";
+
+//     if (attendance >= 90) {
+//       console.log("Status: Outstanding Student");
+//     } else {
+//       console.log("Status: Excellent Result");
+//     }
+//   }
+
+//   else if (finalScore >= 70) {
+//     grade = "B";
+
+//     if (attendance < 80) {
+//       console.log("Status: Good Result, But Improve Your Attendance");
+//     } else {
+//       console.log("Status: Very Good");
+//     }
+//   }
+
+//   else if (finalScore >= 60) {
+//     grade = "C";
+//     console.log("Status: Good");
+//   }
+
+//   else if (finalScore >= 50) {
+//     grade = "D";
+//     console.log("Status: You Need to Improve");
+//   }
+
+//   else {
+//     grade = "F";
+//     console.log("Status: Student Failed");
+//   }
+
+
+//   if (conduct === "poor") {
+//     if (grade === "A" || grade === "B") {
+//       grade = "C";
+//     }
+
+//     console.log("Warning: Poor Conduct");
+//   }
+
+//   console.log("Grade:", grade);
+// }
+
+
+let day = null;
+switch(day) {
+  case "Monday":
+    console.log("Today is Monday");
+     break;
+  case "Tuesday":
+    console.log("Today is Tuesday");
+     break;
+  case "Wednesday":
+    console.log("Today is Wednesday");
+     break;
+  case "Thursday":
+    console.log("Today is Thursday");
+     break;
+   case "Friday":
+     console.log("Today is Friday");
+      break;
+      default:
+        console.log("Invalid day")
+}
+
+let num1 = 20;
+let num2 = 30;
+let operator = "*"
+
+switch(operator){
+  case "+":
+        console.log(num1 + num2);
+          break;
+  case "-":
+        console.log(num1 - num2);
+          break;
+  case "/":
+        console.log(num1 / num2);
+          break;
+  case "*":
+        console.log(num1 * num2);
+          break;
+          default:
+            console.log("Not a number")
+    
+
+
+}
+let role = `Guest`
+    switch(role){
+      case "Admin":
+        console.log("Welcome to Admin dashboard");
+      console.log("You have full access");
+          break;
+      case "Teacher":
+        console.log("Welcome to tutor dashboard");
+         console.log("You have access to your personal students' report");
+         break;
+      case "Student":
+        console.log("Welcome to Student dashboard");
+         console.log("You have access to your report");
+         break;
+      case "Guest":
+        console.log("Welcome as a guest");
+         console.log("You have limited access");
+         break;
+         default:
+          console.log("Unknown user")
+}
+     // strings(``, "", '')
+
+  //   let age = 18;
+  //   age >= 18 ?console.log("You are an adult"): age === 17?console.log("You are still coming up"):("You are a minor")
+  //   let balance = 10000;
+  //   let withdrawal = 7000;
+  //    let result = withdrawal <= balance ? "Transaction succesful" : "Insufficient funds";
+  //  console.log(result)
+    
+    
+    
+    // netlify vercel infinity 
+    
+    
+    </script>
+    <script>
+      const fruits = ["Mango", "KIWI", "pawpaw", "apple", "guava", "cherry"]
+      console.log(fruits)
+      console.log(fruits[1])
+
+      for( let i =0; i < fruits.length; i++ )
+      console.log(i)
+    </script>
+
+    <script>
+      const products = [
+  {
+    "product_id": 6,
+    "id": 5,
+    "user_id": 5,
+    "title": "test",
+    "image_url": "[\"24310c47d8d434b9833a4308468836d4.jpg\",\"8a2fe8818a057a8638d1adc27329ce15.jpg\",\"6b5b2d6afe14d94542a2824d94e3ba1d.jpg\"]",
+    "description": "good",
+    "category_id": 1,
+    "quantity": 400,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Abuja",
+    "actual_price": "450000.00",
+    "promo_price": "350000.00",
+    "condition": "new",
+    "ask_for_price": false,
+    "deleted_at": null,
+    "created_at": "2024-11-19T17:39:25.000000Z",
+    "updated_at": "2024-11-19T17:39:25.000000Z",
+    "badge_status": 1,
+    "verify_status": 1,
+    "email": "lightninghina@gmail.com",
+    "shop_token": "B9LQ5IsIw7CGCM7IY4j1keJY79yz6xuZObBGZ9pbUrPLvipRBK",
+    "name": "Johnson Oluwagbenga",
+    "username": "2024-07-01",
+    "photo_url" : "160df91f69cd3988a4e3ef0586519eaa.jpg",
+    "phone_number": "08135748544",
+    "user_created_at": "2024-11-16 19:04:01"
+  },
+  {
+    "product_id": 7,
+    "id": 5,
+    "user_id": 5,
+    "title": "Affordable Phones for Sale!",
+    "image_url": "[\"164a21084413db7dd9412edec6d6e713.jpg\",\"2029ad81cb68ab9bba8e2f0eed98ee4c.jpg\",\"bf1a7da2300a837822c68ddb783290ef.jpg\"]",
+    "description": "Looking for a quality phone at the best price?  \r\n- Trusted brands available  \r\n- Perfect for work, school, or personal use  \r\n- Limited stock, act fast!  \r\n\r\nContact us now to grab yours before it’s gone!",
+    "category_id": 1,
+    "quantity": 300,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Lagos",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2024-11-19T20:09:31.000000Z",
+    "updated_at": "2024-11-19T20:09:31.000000Z",
+    "badge_status": 1,
+    "verify_status": 1,
+    "email": "lightninghina@gmail.com",
+    "shop_token": "B9LQ5IsIw7CGCM7IY4j1keJY79yz6xuZObBGZ9pbUrPLvipRBK",
+    "name": "Johnson Oluwagbenga",
+    "username": "2024-07-01",
+    "photo_url": "160df91f69cd3988a4e3ef0586519eaa.jpg",
+    "phone_number": "08135748544",
+    "user_created_at": "2024-11-16 19:04:01"
+  },
+  {
+    "product_id": 184,
+    "id": 240,
+    "user_id": 240,
+    "title": "Iphone",
+    "image_url": "[\"85428dcd95b3336426d108b2c86f2c35.png\"]",
+    "description": "Get your gadget now",
+    "category_id": 1,
+    "quantity": 30,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Lagos",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2026-07-07T14:45:56.000000Z",
+    "updated_at": "2026-07-07T14:45:56.000000Z",
+    "badge_status": 1,
+    "verify_status": 1,
+    "email": "Temi3@gmail.com",
+    "shop_token": "9koHATKjtsCUmH3an6QYYCxFF8VLY3fyj5VNSA0RRKPU4O2TKH",
+    "name": "Joseph",
+    "username": "Zynaptic",
+    "photo_url": "985cb051142a69d6e11a74e4aaee3734.jfif",
+    "phone_number": "07084345640",
+    "user_created_at": "2026-04-28 10:37:19"
+  },
+  {
+    "product_id": 176,
+    "id": 240,
+    "user_id": 240,
+    "title": "test",
+    "image_url": "[\"af052c111efd8513b30a4bbc8b634e8a.jpg\"]",
+    "description": "test",
+    "category_id": 1,
+    "quantity": 2,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Ilorin",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2026-04-30T11:42:11.000000Z",
+    "updated_at": "2026-04-30T11:42:11.000000Z",
+    "badge_status": 1,
+    "verify_status": 1,
+    "email": "Temi3@gmail.com",
+    "shop_token": "9koHATKjtsCUmH3an6QYYCxFF8VLY3fyj5VNSA0RRKPU4O2TKH",
+    "name": "Joseph",
+    "username": "Zynaptic",
+    "photo_url": "985cb051142a69d6e11a74e4aaee3734.jfif",
+    "phone_number": "07084345640",
+    "user_created_at": "2026-04-28 10:37:19"
+  },
+  {
+    "product_id": 10,
+    "id": 5,
+    "user_id": 5,
+    "title": "Trouser pants",
+    "image_url": "[\"0f62562421158ee493eb5c73ac3b8bf7.jpg\",\"a1acca956d3572ec78344c4ca100a250.jpg\"]",
+    "description": "pants of trouser available for 15 each",
+    "category_id": 4,
+    "quantity": 300,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Lagos",
+    "actual_price": "15000.00",
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": false,
+    "deleted_at": null,
+    "created_at": "2024-12-02T19:13:25.000000Z",
+    "updated_at": "2024-12-02T19:13:25.000000Z",
+    "badge_status": 1,
+    "verify_status": 1,
+    "email": "lightninghina@gmail.com",
+    "shop_token": "B9LQ5IsIw7CGCM7IY4j1keJY79yz6xuZObBGZ9pbUrPLvipRBK",
+    "name": "Johnson Oluwagbenga",
+    "username": "2024-07-01",
+    "photo_url": "160df91f69cd3988a4e3ef0586519eaa.jpg",
+    "phone_number": "08135748544",
+    "user_created_at": "2024-11-16 19:04:01"
+  },
+  {
+    "product_id": 3,
+    "id": 5,
+    "user_id": 5,
+    "title": "Hp and dell Laptop",
+    "image_url": "[\"bd2a9f38b479a2659af2a64e174922db.jpg\",\"90e6896cf5310234e4df6d487c1dd59a.jpg\",\"c47332ad2e444720ba8cc3b4d4a77bd9.jpg\"]",
+    "description": "G 4 upward\r\nSSD 256\r\n8 gig ram, upgrable \r\nKeyboard light \r\n14 inches screen\r\nFoldable screen",
+    "category_id": 1,
+    "quantity": 499,
+    "sold": 3,
+    "avg_rating": 3,
+    "location": "Ilorin",
+    "actual_price": "150000.00",
+    "promo_price": "145000.00",
+    "condition": "fairly_used",
+    "ask_for_price": false,
+    "deleted_at": null,
+    "created_at": "2024-11-18T15:03:13.000000Z",
+    "updated_at": "2025-12-04T07:51:53.000000Z",
+    "badge_status": 1,
+    "verify_status": 1,
+    "email": "lightninghina@gmail.com",
+    "shop_token": "B9LQ5IsIw7CGCM7IY4j1keJY79yz6xuZObBGZ9pbUrPLvipRBK",
+    "name": "Johnson Oluwagbenga",
+    "username": "2024-07-01",
+    "photo_url": "160df91f69cd3988a4e3ef0586519eaa.jpg",
+    "phone_number": "08135748544",
+    "user_created_at": "2024-11-16 19:04:01"
+  },
+  {
+    "product_id": 16,
+    "id": 36,
+    "user_id": 36,
+    "title": "Vintage Gowns",
+    "image_url": "[\"897e119fca3a6651211416d6d5a360b4.jpg\",\"0f5aa23f1be385fc404d00829b057d8f.jpg\",\"b72761e8f557886003335ca22332bc46.png\"]",
+    "description": "The Vintage Hub offers the best Vintage material gowns to make you stand out of the crowd wherever you are!\r\n\r\nWhat's even better is that you get to choose from our variety of materials available and get it sewed to your taste and size and we get it delivered directly to your doorstep.\r\n\r\nWe are just a chat away on Whatsapp: 09023545275",
+    "category_id": 4,
+    "quantity": 49,
+    "sold": 1,
+    "avg_rating": 5,
+    "location": "Ilorin",
+    "actual_price": "13000.00",
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": false,
+    "deleted_at": null,
+    "created_at": "2024-12-24T02:20:32.000000Z",
+    "updated_at": "2024-12-27T19:36:04.000000Z",
+    "badge_status": 0,
+    "verify_status": 0,
+    "email": "doyinmolami@gmail.com",
+    "shop_token": "TvKS4g7J0mBEvifYOWZuX5547BiOEAqSGYs31q7cytC8VI5UQ5",
+    "name": "Makanjuola Itunu",
+    "username": "ItunuOla",
+    "photo_url": "4f294b73c465c56fede393764fabf363.png",
+    "phone_number": "09023545275",
+    "user_created_at": "2024-12-24 01:05:35"
+  },
+  {
+    "product_id": 192,
+    "id": 269,
+    "user_id": 269,
+    "title": "Cloth",
+    "image_url": "[\"c9181e8be2f571ce586c86b2459d7fbc.jpeg\"]",
+    "description": "I want a pink cloth",
+    "category_id": 4,
+    "quantity": 1,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Ilorin",
+    "actual_price": "10000.00",
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": false,
+    "deleted_at": null,
+    "created_at": "2026-08-17T16:21:35.000000Z",
+    "updated_at": "2026-08-17T16:21:35.000000Z",
+    "badge_status": 0,
+    "verify_status": 0,
+    "email": "lydiaaderibigbe44@gmail.com",
+    "shop_token": "gYBrZxX4BzW0aWBsW7OaQ8QdMvZEDOaeTmZPVwOdYpK5tz3aow",
+    "name": null,
+    "username": "Aderibigbe",
+    "photo_url": "831af9059b633b031adc582af0638536.jpeg",
+    "phone_number": "09053110554",
+    "user_created_at": "2026-08-17 10:34:48"
+  },
+  {
+    "product_id": 20,
+    "id": 13,
+    "user_id": 13,
+    "title": "Wedding cake",
+    "image_url": "[\"4d704ddf405c5f038adfedba9940de2e.jpg\"]",
+    "description": "Custom made wedding cake",
+    "category_id": 9,
+    "quantity": 8,
+    "sold": 2,
+    "avg_rating": 5,
+    "location": "Ilorin",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2024-12-24T21:24:39.000000Z",
+    "updated_at": "2024-12-27T20:25:49.000000Z",
+    "badge_status": 0,
+    "verify_status": 0,
+    "email": "shananastreat@gmail.com",
+    "shop_token": "bpgaWnVvTx61fSmNW7A42skfRSvUrpcBN70pUhdo111DHRGywA",
+    "name": "Bamijoko oluwaseun Josephine",
+    "username": "Shananas treat",
+    "photo_url": "fdc9411aaf837bb2e802abe1459f0da22040.jpg",
+    "phone_number": "08104128639",
+    "user_created_at": "2024-11-28 16:57:16"
+  },
+  {
+    "product_id": 19,
+    "id": 3,
+    "user_id": 3,
+    "title": "Dell laptop",
+    "image_url": "[\"9c6bbe4aa4b170af8bc5175b45dbe0f736.jpg\"]",
+    "description": "High speed core i5 with long lasting battery",
+    "category_id": 1,
+    "quantity": 6,
+    "sold": 1,
+    "avg_rating": 5,
+    "location": "Ilorin",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2024-12-24T20:14:45.000000Z",
+    "updated_at": "2024-12-31T00:08:46.000000Z",
+    "badge_status": 0,
+    "verify_status": -1,
+    "email": "valar@gmail.com",
+    "shop_token": "DKd1Fbl37tDQ6rYLeDxAlRbWrlQQTFvEdRQ5yBaJMy40ykzDR0",
+    "name": "valar",
+    "username": "Dev",
+    "photo_url": "6921a328ac4522277e4c9a058d46109d2884.jpg",
+    "phone_number": "09131365111",
+    "user_created_at": "2024-11-15 11:52:19"
+  },
+  {
+    "product_id": 18,
+    "id": 35,
+    "user_id": 35,
+    "title": "Premium quality human hair wig",
+    "image_url": "[\"9a3c532b4bd54daac40a4421b3938dbd.jpeg\",\"232aabd9ce538ba0980762d42cbc0b60.jpeg\",\"18ed3aecc24d530679e6e1119a831dc3.jpeg\"]",
+    "description": "Looking for premium quality human hair wig within Abuja city, look no further....\r\n\r\nConnect with me now.\r\nBenefits:\r\nFree human hair re ample for 1 year.\r\nTips on how to treat the hair.\r\nSpecial bonuses 💕😘",
+    "category_id": 4,
+    "quantity": 20,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Ado Ekiti",
+    "actual_price": "300000.00",
+    "promo_price": "250000.00",
+    "condition": "new",
+    "ask_for_price": false,
+    "deleted_at": null,
+    "created_at": "2024-12-24T14:54:06.000000Z",
+    "updated_at": "2024-12-24T15:34:39.000000Z",
+    "badge_status": 0,
+    "verify_status": 0,
+    "email": "grace23@gmail.com",
+    "shop_token": "IIYpHfQKcXTTh9Nu1YRy4XqXMfnLa8c0Q2o39HzJZ9KfPYTY6M",
+    "name": null,
+    "username": "Grace",
+    "photo_url": "540883cb8e9938822c7d9e5d4908362f7741.jpeg",
+    "phone_number": "09012452211",
+    "user_created_at": "2024-12-23 13:32:37"
+  },
+  {
+    "product_id": 17,
+    "id": 36,
+    "user_id": 36,
+    "title": "Vintage Print Materials",
+    "image_url": "[\"d5006ef56782414c20c65579c1a29591.jpg\",\"8ee8d3ef5442b49c854dd0000a4fbee7.jpg\",\"7882af61dd8bdd659566b93ae27bff81.jpg\",\"954c88d9df031d2a5969ce53af9956c2.jpg\",\"7d32fa0ece19af192f661d98583dd299.jpg\"]",
+    "description": "The Vintage Hub offers the best Vintage material to make you stand out of the crowd wherever you are!\r\n\r\nWhat's even better is that you get to choose from our variety of materials available and get it sewed to your taste and size and we get it delivered directly to your doorstep.\r\n\r\nWe are just a chat away on Whatsapp: 09023545275",
+    "category_id": 4,
+    "quantity": 100,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Ilorin",
+    "actual_price": "2500.00",
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": false,
+    "deleted_at": null,
+    "created_at": "2024-12-24T02:25:54.000000Z",
+    "updated_at": "2024-12-24T02:25:54.000000Z",
+    "badge_status": 0,
+    "verify_status": 0,
+    "email": "doyinmolami@gmail.com",
+    "shop_token": "TvKS4g7J0mBEvifYOWZuX5547BiOEAqSGYs31q7cytC8VI5UQ5",
+    "name": "Makanjuola Itunu",
+    "username": "ItunuOla",
+    "photo_url": "4f294b73c465c56fede393764fabf363.png",
+    "phone_number": "09023545275",
+    "user_created_at": "2024-12-24 01:05:35"
+  },
+  {
+    "product_id": 15,
+    "id": 36,
+    "user_id": 36,
+    "title": "Vintage Shirts",
+    "image_url": "[\"8ecddce18d889ebebacce4ca4aeca04f.png\",\"af906ec05dabb840cedec87679761d2c.png\",\"b02493a3c03e69773e5651d32edcced9.png\"]",
+    "description": "The Vintage Hub offers the best Vintage material shirts to make you stand out of the crowd wherever you are!\r\n\r\nWhat's even better is that you get to choose from our variety of materials available and get it sewed to your taste and size and we get it delivered directly to your doorstep.\r\n\r\nWe are just a chat away on Whatsapp: 09023545275",
+    "category_id": 4,
+    "quantity": 99,
+    "sold": 1,
+    "avg_rating": 5,
+    "location": "Ilorin",
+    "actual_price": "8000.00",
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": false,
+    "deleted_at": null,
+    "created_at": "2024-12-24T02:13:34.000000Z",
+    "updated_at": "2025-01-21T17:34:28.000000Z",
+    "badge_status": 0,
+    "verify_status": 0,
+    "email": "doyinmolami@gmail.com",
+    "shop_token": "TvKS4g7J0mBEvifYOWZuX5547BiOEAqSGYs31q7cytC8VI5UQ5",
+    "name": "Makanjuola Itunu",
+    "username": "ItunuOla",
+    "photo_url": "4f294b73c465c56fede393764fabf363.png",
+    "phone_number": "09023545275",
+    "user_created_at": "2024-12-24 01:05:35"
+  },
+  {
+    "product_id": 12,
+    "id": 30,
+    "user_id": 30,
+    "title": "duplex in galadimawa",
+    "image_url": "[\"899eb5b40f746e9f7b3b315b554a4094.jpg\",\"6736e17f9babd0ec77ecce4f15057f0e.jpg\",\"8d57311a5092044f81ea44ff236de0c9.jpg\"]",
+    "description": "fully kitted 8 bedrooms duplex\r\nswimming pool\r\ngarage\r\nac fitted\r\nwater \r\nsolar powered",
+    "category_id": 3,
+    "quantity": 1,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Abuja",
+    "actual_price": "500000000.00",
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": false,
+    "deleted_at": null,
+    "created_at": "2024-12-09T21:56:33.000000Z",
+    "updated_at": "2024-12-16T14:24:01.000000Z",
+    "badge_status": 0,
+    "verify_status": 0,
+    "email": "realtorjames@gmail.com",
+    "shop_token": "SU58sYKNN1jAdXfIucZTpL3V5ENWVCwtiMeddVXhpLPSEhR1Fn",
+    "name": null,
+    "username": "Realtor James",
+    "photo_url": "8a71410b1c8d40a9bf6ef46e39513446.jpg",
+    "phone_number": "08135748544",
+    "user_created_at": "2024-12-09 21:52:05"
+  },
+  {
+    "product_id": 8,
+    "id": 3,
+    "user_id": 3,
+    "title": "Laptops",
+    "image_url": "[\"65997e2e5ca1d04006c3d12ae101e3cb968.jpg\"]",
+    "description": "High grade",
+    "category_id": 1,
+    "quantity": 1,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Abeokuta",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2024-11-20T23:43:02.000000Z",
+    "updated_at": "2024-12-26T13:19:10.000000Z",
+    "badge_status": 0,
+    "verify_status": -1,
+    "email": "valar@gmail.com",
+    "shop_token": "DKd1Fbl37tDQ6rYLeDxAlRbWrlQQTFvEdRQ5yBaJMy40ykzDR0",
+    "name": "valar",
+    "username": "Dev",
+    "photo_url": "6921a328ac4522277e4c9a058d46109d2884.jpg",
+    "phone_number": "09131365111",
+    "user_created_at": "2024-11-15 11:52:19"
+  },
+  {
+    "product_id": 4,
+    "id": 3,
+    "user_id": 3,
+    "title": "Console tv",
+    "image_url": "[\"f988baed9bd57d10db25a57737cc7cd4746.jpg\"]",
+    "description": "very clean, neat and affordable",
+    "category_id": 1,
+    "quantity": 4,
+    "sold": 1,
+    "avg_rating": 2,
+    "location": "abuja",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2024-11-18T20:18:05.000000Z",
+    "updated_at": "2025-11-13T11:26:54.000000Z",
+    "badge_status": 0,
+    "verify_status": -1,
+    "email": "valar@gmail.com",
+    "shop_token": "DKd1Fbl37tDQ6rYLeDxAlRbWrlQQTFvEdRQ5yBaJMy40ykzDR0",
+    "name": "valar",
+    "username": "Dev",
+    "photo_url": "6921a328ac4522277e4c9a058d46109d2884.jpg",
+    "phone_number": "09131365111",
+    "user_created_at": "2024-11-15 11:52:19"
+  },
+  {
+    "product_id": 21,
+    "id": 11,
+    "user_id": 11,
+    "title": "School Portal",
+    "image_url": "[\"480926f84432d08a327a9965878c7f11680.png\",\"480926f84432d08a327a9965878c7f11717.png\",\"8d3842fdaec47adc55d433b294f8bb20278.png\",\"c4c25ae0104fbc41ea52c338422c4adb963.png\",\"6b6f85688d57e172dbac06196931eeff759.png\"]",
+    "description": "Edukate Portal is a comprehensive cloud-based school management system designed to streamline and automate various school operations. It offers features such as curriculum management, student admissions, result management, hostel management, online payments, school fee processing, student management, and more. This all-in-one solution ensures efficient and seamless school administration.",
+    "category_id": 9,
+    "quantity": 20,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Ilorin",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2024-12-27T18:32:23.000000Z",
+    "updated_at": "2024-12-27T18:33:45.000000Z",
+    "badge_status": -1,
+    "verify_status": 1,
+    "email": "acodefix@gmail.com",
+    "shop_token": "UIOfbAJA6T54k26BNK9SzyP6a2kWJIiusXwyPjbXzMF1gt9oyu",
+    "name": "Shittu Afeez",
+    "username": "acodefix",
+    "photo_url": "88b8b42fc50cc70bf144a0f5869659905212.png",
+    "phone_number": "08066579703",
+    "user_created_at": "2024-11-23 08:29:27"
+  },
+  {
+    "product_id": 84,
+    "id": 10,
+    "user_id": 10,
+    "title": "Office building",
+    "image_url": "[\"6b70c719ca632c177871b7b5980df8ed.jpg\"]",
+    "description": "Spacious and conducive",
+    "category_id": 1,
+    "quantity": 1,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Sokoto",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2025-06-09T18:21:29.000000Z",
+    "updated_at": "2025-06-09T18:21:29.000000Z",
+    "badge_status": -1,
+    "verify_status": 1,
+    "email": "kareemkazeem200@gmail.com",
+    "shop_token": "2PzMvbpFlFXBNV7IiXXSRRbHqvVu3Tve4SC6ZL9F5iBR1xUK5d",
+    "name": "kazeem",
+    "username": "swiflty",
+    "photo_url": "dc503bc20b615c0597464aef4cecaaf17770.png",
+    "phone_number": "09037450730",
+    "user_created_at": "2024-11-22 20:35:43"
+  },
+  {
+    "product_id": 9,
+    "id": 10,
+    "user_id": 10,
+    "title": "Clothes",
+    "image_url": "[\"9633bdc271363bb6674c85b86214771a442.jpeg\"]",
+    "description": "Quality and durable",
+    "category_id": 4,
+    "quantity": 2,
+    "sold": 0,
+    "avg_rating": 0,
+    "location": "Ogun",
+    "actual_price": null,
+    "promo_price": null,
+    "condition": "new",
+    "ask_for_price": true,
+    "deleted_at": null,
+    "created_at": "2024-11-30T01:47:25.000000Z",
+    "updated_at": "2024-12-24T21:19:20.000000Z",
+    "badge_status": -1,
+    "verify_status": 1,
+    "email": "kareemkazeem200@gmail.com",
+    "shop_token": "2PzMvbpFlFXBNV7IiXXSRRbHqvVu3Tve4SC6ZL9F5iBR1xUK5d",
+    "name": "kazeem",
+    "username": "swiflty",
+    "photo_url": "dc503bc20b615c0597464aef4cecaaf17770.png",
+    "phone_number": "09037450730",
+    "user_created_at": "2024-11-22 20:35:43"
+  }
+
+]
+const container = document.getElementById(`product-container`)
+for(let i = 0; i < products.length; i++){
+  const product = products[i];
+container.innerHTML += `<div class="product-card">
+  <h2>${product.title}</h2>
+  <p>Price: #${product.actual_price}</p>
+  <p>Location: #${product.location}</p>
+</div>`
+}
+
+
+function greetMe(){
+  console.log("Good morning")
+}
+
+function greetJohn(name){
+  console.log(`Good morning ${name}`);
+}
+greetJohn("James")
+greetJohn("Mary")
+
+function add(a , b){
+  console.log( a + b)
+}
+add(20 , 30)
+
+function multiply(x,y){
+  return x + y;
+}
+const result = multiply(10 , 10)
+console.log(result)
+
+const total = multiply(10,10)*2
+console.log(total)
+
+const item ={
+  title: "Laptop",
+  actual_price: 15000,
+  promo_price: 10000
+}
+function items(item){
+  if(item.promo_price){
+    return item.promo_price
+  }
+  return item.actual_price
+}
+const price = items(item)
+console.log(price)
+
+function checkPrice(price){
+  if(price > 10000){
+    return "Expensive"
+  }
+  return "Affordable"
+}
+console.log(checkPrice(15000000))
+console.log(checkPrice(3000))
+
+// function pen( c , e){
+//   return c * e;
+// }
+// const age( 4 , 6)
+// console.log(age)
+    </script>
+</body>
+</html>

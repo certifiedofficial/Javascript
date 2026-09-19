@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #f4f4f4;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        text-align: center;
+    }
+    .container h1{
+        font-size: 10px;
+    }
+    .container p{
+        margin-bottom: 20px;
+        color: #555;
+    }
+    #openModal{
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        background-color: #113;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #openModal:hover{
+        background: #333;
+    }
+    .modal{
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .modal.active{
+        display: flex;
+    }
+    .modal-content{
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        background-color: white;
+        padding: 40px;
+        border-radius: 15px;
+        text-align: center;
+        animation: popup 0.3s ease;
+    }
+    .modal-content h2{
+        margin-bottom: 15px;
+    }
+    .modal-content p{
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+    .close{
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        border: none;
+        background: none;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .confirm{
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        background: #111;
+        color: white;
+        cursor: pointer;
+    }
+    @keyframe popup{
+        from{
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to{
+            opacity: 1;
+            transform: 1;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <p>click the button below to open the modal</p>
+        <button id="openModal">Open Modal</button>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-contene">
+            <button class="close" id="closeModal">&times</button>
+            <h2>Hello</h2>
+            <p>This is a functional modal created with html, css and javascript</p>
+            <button class="confirm">Continue</button>
+        </div>
+    </div>
+
+    <script>
+        const openModal = document.querySelector("#openModal")
+        const closeModal = document.querySelector("#closeModal")
+        const modal = document.querySelector("#modal")
+        const confirm = document.querySelector("confirm")
+
+        openModal.addEventListener("click", () =>{
+            modal.classList.add("active")
+        })
+        closeModal.addEventListener("click", () =>{
+            modal.classList.remove("active")
+        })
+        confirm.addEventListener("click", () =>{
+            modal.classList.remove("active")
+        })
+        modal,addEventListener("click", () =>{
+            if(event.target === modal){
+                modal.classList.remove("active")
+            }
+        })
+        document.addEventListener("keydown",(event)=>{
+            if(event.key === "Escape"){
+                modal.classList.remove("active")
+            }
+        })
+    </script>
+</body>
+</html>
