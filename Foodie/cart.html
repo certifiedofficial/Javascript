@@ -9,15 +9,148 @@
 
     <title>Your Cart</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap"rel="stylesheet">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-    <link rel="stylesheet" href="style.css">
+    body {
+        font-family: "Poppins", sans-serif;
+        min-height: 100vh;
+        background:
+            linear-gradient(
+                135deg,
+                rgba(15, 23, 42, 0.95),
+                rgba(30, 41, 59, 0.9)
+            );
+        color: white;
+        padding: 40px 20px;
+    }
+    .cart-page {
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+    }
+    .back {
+        display: inline-block;
+        margin-bottom: 25px;
+        color: #fbbf24;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
 
+    .back:hover {
+        transform: translateX(-5px);
+    }
+    .cart-page h1 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .cart-item {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 18px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        transition: 0.3s ease;
+    }
+    .cart-item:hover {
+        transform: translateY(-4px);
+        border-color: rgba(251, 191, 36, 0.5);
+    }
+    .cart-item img {
+        width: 150px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+    .cart-item h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+    .cart-item p {
+        font-family: "Inter", sans-serif;
+        color: #d1d5db;
+        margin: 5px 0;
+    }
+    .cart-item button {
+        margin-top: 12px;
+        padding: 9px 18px;
+        border: none;
+        border-radius: 8px;
+        background: #ef4444;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .cart-item button:hover {
+        background: #dc2626;
+        transform: scale(1.05);
+    }
+    .cart-summary {
+        margin-top: 30px;
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    }
+    .cart-summary h2 {
+        font-size: 24px;
+    }
+    #cart-total {
+        color: #fbbf24;
+    }
+    .checkout {
+        padding: 13px 24px;
+        border: none;
+        border-radius: 10px;
+        background: #fbbf24;
+        color: #111827;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .checkout:hover {
+        background: #f59e0b;
+        transform: translateY(-2px);
+    }
+    .empty-cart {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 18px;
+        padding: 60px 20px;
+    }
+    .empty-cart h2 {
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+    .empty-cart p {
+        color: #cbd5e1;
+        margin-bottom: 25px;
+    }
+   </style>
 </head>
-
 <body>
 
     <div class="cart-page">

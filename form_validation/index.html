@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .error-msg {
+            color: #ff3333;
+            font-size: 12px; /* Increased from 0.5px so it's readable */
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<form id="signupForm">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <span id="usernameError" class="error-msg"></span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <span id="emailError" class="error-msg"></span>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" name="password" id="password">
+        <span id="passwordError" class="error-msg"></span>
+    </div>
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="text" name="confirmPassword" id="confirmPassword">
+        <span id="confirmPasswordError" class="error-msg"></span>
+    </div>
+    <button type="submit">Register</button>
+</form>
+
+<script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let isValid = true;
+        clearErrors();
+
+        const username = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (username === "") {
+            showError('usernameError', 'Username is required');
+            isValid = false;
+        } else if (username.length < 3) {
+            showError('usernameError', 'Username must be at least 3 characters');
+            isValid = false;
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (email === '') {
+            showError('emailError', 'Email is required');
+            isValid = false;
+        } else if (!emailRegex.test(email)) {
+            showError('emailError', 'Please enter a valid email address');
+            isValid = false;
+        }
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (password === '') {
+            showError('passwordError', 'Password is required');
+            isValid = false;
+        } else if (!passwordRegex.test(password)) {
+            showError('passwordError', 'Please enter a strong password');
+            isValid = false;
+        }
+        
+        if (confirmPassword === '') {
+            showError('confirmPasswordError', 'Please confirm your password');
+            isValid = false;
+        } else if (password !== confirmPassword) {
+            showError('confirmPasswordError', 'Passwords do not match');
+            isValid = false;
+        }
+
+        if (isValid) {
+            alert('Form submitted successfully!');
+        }
+    });
+
+    function showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+    }
+
+    function clearErrors() {
+        const errorMessages = document.querySelectorAll('.error-msg');
+        errorMessages.forEach(msg => {
+            msg.textContent = '';
+            msg.style.display = 'none';
+        });
+    }
+</script>
+
+</body>
+</html>
